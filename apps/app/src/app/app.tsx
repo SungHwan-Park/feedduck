@@ -13,7 +13,8 @@ export function App() {
   },[])
   return (
     <div className={styles.app}>
-      <h1>{ JSON.stringify(message) }</h1>
+      <h1>How people feed ducks!</h1>
+      <div>{ JSON.stringify(message) }</div>
     </div>
   );
 }
