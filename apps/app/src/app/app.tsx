@@ -7,7 +7,7 @@ import styles from './app.module.scss';
 export function App() {
   const [ message, setMessage ] = useState<IFeed>();
   useEffect(() => {
-    fetch('/api').then(res => res.json()).then(result => {
+    fetch('/api/feeds').then(res => res.json()).then(result => {
       setMessage(result)
     })
   },[])
