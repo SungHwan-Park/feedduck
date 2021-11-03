@@ -1,3 +1,4 @@
+import { CreateFeedDto } from '@freshworks/shared';
 import { Controller, Get, Body, Post } from '@nestjs/common';
 
 import { AppService } from './app.service';
@@ -12,7 +13,7 @@ export class AppController {
   }
 
   @Post()
-  createFeed(@Body() body: any) {
+  createFeed(@Body() body: CreateFeedDto) {
     return this.appService.create(body);
   }
 }

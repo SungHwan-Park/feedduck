@@ -1,4 +1,4 @@
-import { IFeed } from '@freshworks/shared';
+import { CreateFeedDto } from '@freshworks/shared';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { AppController } from './app.controller';
@@ -22,17 +22,29 @@ describe('AppController', () => {
   });
 
   describe('create a feed', () => {
+    const testFeed: CreateFeedDto = {
+      farmer: "Leanne Graham",
+      date: '2020-01-01',
+      place: "722 S.W. 8th Street",
+      count: 100,
+      quantity: 1000,
+      food: "Fruits",
+    }
+
     it('should return test data"', () => {
       const appController = app.get<AppController>(AppController);
-      const feed: Partial<IFeed> = {
-        farmer: '',
-        date: '',
-        place: '',
-        count: 0,
-        quantity: 0,
-        food: ''
+      expect(appController.createFeed(testFeed)).toBeDefined();
+    });
+
+    it('should fail with invalid data"', done => {
+      const appController = app.get<AppController>(AppController);
+      const feed: any = { count: '100', ...testFeed };
+      try {
+        appController.createFeed(feed);
+        done.fail('should have failed');
+      } catch {
+        done();
       }
-      expect(appController.createFeed(feed)).toBeDefined();
     });
   });
 });
