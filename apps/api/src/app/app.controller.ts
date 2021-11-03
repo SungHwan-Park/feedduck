@@ -8,7 +8,6 @@ export class AppController {
 
   @Get()
   getData() {
-    console.log('api responds!')
     return this.appService.getData();
   }
 }
