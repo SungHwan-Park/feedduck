@@ -15,7 +15,7 @@ describe('AppService', () => {
 
   describe('getData', () => {
     it('should return test data"', () => {
-      expect(service.getData()).toBeDefined();
+      expect(service.find()).toBeDefined();
     });
   });
 });

@@ -3,16 +3,15 @@ import { IFeed } from '@freshworks/shared';
 
 @Injectable()
 export class AppService {
-  getData(): IFeed {
-    const data: IFeed = {
-      id: 1,
-      farmer: 'John',
-      date: '2020-01-01',
-      place: 'Kathmandu',
-      count: 10,
-      quantity: 100,
-      food: 'Rice',
-    }
-    return data;
+  private feeds: IFeed[] = [];
+
+  find(): IFeed[] {
+    return this.feeds;
+  }
+
+  create(data: IFeed): IFeed {
+    const feed = { id: this.feeds.length + 1, ...data };
+    this.feeds.push(feed);
+    return feed;
   }
 }

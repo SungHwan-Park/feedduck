@@ -1,0 +1,15 @@
+### List all feeds
+GET http://localhost:3000/api/feeds
+
+### Create a new feed
+POST http://localhost:3000/api/feeds
+Content-Type: application/json
+
+{
+  "farmer": "North Farm",
+  "date": "2017-01-01",
+  "place": "North",
+  "count": 10,
+  "quantity": 100,
+  "food": "Rice"
+}
