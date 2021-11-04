@@ -1,13 +1,24 @@
+import { useHistory } from 'react-router';
 import axios from 'axios';
 import { useFormik } from "formik";
-import { Typography, Box, TextField, Container, Paper, InputAdornment, Button } from "@material-ui/core";
+import { 
+  Typography,
+  Box, 
+  TextField, 
+  Container, 
+  Paper, 
+  InputAdornment, 
+  Button 
+} from "@material-ui/core";
 import { DateTimePicker } from '@material-ui/pickers';
 import { feedValidator } from "./validateor";
+import { IFeed } from '@freshworks/shared';
 
 export const FeedForm = () => {
-  const submit = (values: any, {resetForm}: any) => {
-    axios.post("/api/feeds", values).then(res => {
-      resetForm()
+  const history = useHistory();
+  const submit = (values: IFeed) => {
+    axios.post('/api/feeds', values).then(res => {
+      history.push('/app');
     });
   }
   const formik = useFormik({
@@ -15,7 +26,7 @@ export const FeedForm = () => {
       farmer: "",
       food: "",
       place: "",
-      date: new Date(),
+      date: new Date().toISOString(),
       count: 0,
       quantity: 0
     },
