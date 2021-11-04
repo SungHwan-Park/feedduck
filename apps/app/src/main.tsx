@@ -13,11 +13,11 @@ ReactDOM.render(
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <BrowserRouter>
         <Switch>
-          <Route path='/app'>
-            <App />
-          </Route>
-          <Route exact path='/'>
+          <Route path='/new'>
             <FeedForm />
+          </Route>
+          <Route path='/'>
+            <App />
           </Route>
         </Switch>
       </BrowserRouter>

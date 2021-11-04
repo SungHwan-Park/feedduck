@@ -2,7 +2,7 @@
 import { getGreeting } from '../support/app.po';
 
 describe('app', () => {
-  beforeEach(() => cy.visit('/'));
+  beforeEach(() => cy.visit('/new'));
 
   it('should submit a feed', () => {
     // Function helper example, see `../support/app.po.ts` file

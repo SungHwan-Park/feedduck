@@ -6,23 +6,33 @@ import {
   TableCell,
   TableBody,
   TableHead,
-  TableRow
+  TableRow,
+  Box,
+  Button
  } from '@material-ui/core';
 
 import { IFeed } from '@freshworks/shared';
 
 import styles from './app.module.scss';
+import { useHistory } from 'react-router-dom';
 
 export function App() {
+
+  const history = useHistory();
   const [ feeds, setFeeds ] = useState<IFeed[]>([]);
+
   useEffect(() => {
     axios.get('/api/feeds').then(result => {
       setFeeds(result.data)
     })
   },[])
+
   return (
     <div className={styles.app}>
       <h1>How people feed ducks!</h1>
+      <Box display="flex" justifyContent="end" my={4}>
+        <Button variant="outlined" onClick={() => history.push('/new')}>Submit New Feed</Button>
+      </Box>
       <TableContainer>
         <Table>
           <TableHead>
