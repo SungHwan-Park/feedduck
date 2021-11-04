@@ -13,7 +13,7 @@ describe('app', () => {
     cy.get('#quantity').type('20');
     cy.get('#food').type('wheat');
     cy.get('#place').type('yard');
-    cy.get('#farmer').type('John');
+    cy.get('#name').type('John');
     cy.get('form').submit();
 
     cy.get('#title').contains('Your feed has been submitted!');

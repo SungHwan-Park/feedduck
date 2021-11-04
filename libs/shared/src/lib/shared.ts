@@ -3,7 +3,7 @@ import { IsString, IsNumber, IsDateString, Min } from "class-validator";
 export interface IFeed {
   id?: number;
 
-  farmer: string;
+  name: string;
 
   date: string;
 
@@ -18,7 +18,7 @@ export interface IFeed {
 
 export class CreateFeedDto implements IFeed {
   @IsString()
-  farmer: string;
+  name: string;
 
   @IsDateString()
   date: string;

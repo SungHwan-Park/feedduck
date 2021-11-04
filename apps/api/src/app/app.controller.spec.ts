@@ -38,7 +38,7 @@ describe('AppController', () => {
 
   describe('create a feed', () => {
     const testFeed: CreateFeedDto = {
-      farmer: "Leanne Graham",
+      name: "Leanne Graham",
       date: '2020-01-01',
       place: "722 S.W. 8th Street",
       count: 100,

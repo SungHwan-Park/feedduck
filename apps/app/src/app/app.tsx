@@ -38,7 +38,7 @@ export function App() {
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
-              <TableCell>Farmer</TableCell>
+              <TableCell>name</TableCell>
               <TableCell>Date</TableCell>
               <TableCell>Count</TableCell>
               <TableCell>Quantity</TableCell>
@@ -50,7 +50,7 @@ export function App() {
             {feeds.map(feed => (
               <TableRow key={feed.id}>
                 <TableCell>{feed.id}</TableCell>
-                <TableCell>{feed.farmer}</TableCell>
+                <TableCell>{feed.name}</TableCell>
                 <TableCell>{feed.date}</TableCell>
                 <TableCell>{feed.count}</TableCell>
                 <TableCell>{feed.quantity}</TableCell>

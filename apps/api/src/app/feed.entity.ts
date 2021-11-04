@@ -8,7 +8,7 @@ export class Feed implements IFeed {
   id: number;
 
   @Column()
-  farmer: string;
+  name: string;
 
   @Column()
   date: string;

@@ -6,7 +6,7 @@ POST http://localhost:3000/api/feeds
 Content-Type: application/json
 
 {
-  "farmer": "North Farm",
+  "name": "North Farm",
   "date": "2017-01-01",
   "place": "North",
   "count": 10,

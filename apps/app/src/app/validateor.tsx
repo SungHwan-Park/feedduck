@@ -6,5 +6,5 @@ export const feedValidator = yup.object({
   count: yup.number().min(1).required(),
   quantity: yup.number().min(1).required(),
   food: yup.string().required(),
-  farmer: yup.string().required(),
+  name: yup.string().required(),
 });

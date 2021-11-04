@@ -29,7 +29,7 @@ export const FeedForm = () => {
   }
   const formik = useFormik({
     initialValues: { 
-      farmer: "",
+      name: "",
       food: "",
       place: "",
       date: new Date().toISOString(),
@@ -142,16 +142,16 @@ export const FeedForm = () => {
             </Box>
             <Box my={2}>
               <TextField
-                id="farmer"
-                name="farmer"
+                id="name"
+                name="name"
                 type="text"
-                label="Farmer"
+                label="name"
                 variant="outlined"
                 fullWidth
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.farmer}
-                error={touched.farmer && Boolean(errors.farmer)}
+                value={values.name}
+                error={touched.name && Boolean(errors.name)}
               />
             </Box>
             <Box my={2}>
