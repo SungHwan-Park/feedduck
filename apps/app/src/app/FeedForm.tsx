@@ -13,12 +13,19 @@ import {
 import { DateTimePicker } from '@material-ui/pickers';
 import { feedValidator } from "./validateor";
 import { IFeed } from '@freshworks/shared';
+import { useState } from 'react';
 
 export const FeedForm = () => {
   const history = useHistory();
+
+  const [ submited, setSubmited ] = useState(false);
+
   const submit = (values: IFeed) => {
     axios.post('/api/feeds', values).then(res => {
-      history.push('/app');
+      setSubmited(true);
+      setTimeout(() => {
+        history.push('/app');
+      }, 5000)
     });
   }
   const formik = useFormik({
@@ -49,7 +56,9 @@ export const FeedForm = () => {
     <Container maxWidth="sm">
       <Paper elevation={0}>
       <Box textAlign="center" mt={3}>
-        <Typography variant="h4">How do you feed your ducks?</Typography>
+      <Typography id="title" variant="h6">
+        { submited ? "Your feed has been submitted!" : "How do you feed your ducks?"}
+      </Typography>
       </Box>
       <Box display="flex" height="70vh" alignItems="center" justifyContent="center">
         <Box minWidth="70%">
