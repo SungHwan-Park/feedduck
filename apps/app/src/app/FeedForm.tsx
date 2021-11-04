@@ -1,9 +1,15 @@
+import axios from 'axios';
 import { useFormik } from "formik";
 import { Typography, Box, TextField, Container, Paper, InputAdornment, Button } from "@material-ui/core";
 import { DateTimePicker } from '@material-ui/pickers';
 import { feedValidator } from "./validateor";
 
 export const FeedForm = () => {
+  const submit = (values: any, {resetForm}: any) => {
+    axios.post("/api/feeds", values).then(res => {
+      resetForm()
+    });
+  }
   const formik = useFormik({
     initialValues: { 
       farmer: "",
@@ -14,9 +20,7 @@ export const FeedForm = () => {
       quantity: 0
     },
     validationSchema: feedValidator,
-    onSubmit: (values) => {
-      console.log(values);
-    },
+    onSubmit: submit,
   });
 
   const { 
