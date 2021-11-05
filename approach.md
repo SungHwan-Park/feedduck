@@ -16,7 +16,7 @@ I have more experience in Vue than React, but I chose React because Nx has much 
 
 As component libraries, I used Material-UI and Formik.
 
-## Approach
+# Approach
 
 ### API
 
@@ -41,7 +41,7 @@ I wished to implement pagination and real-time feed updates using socket or Grap
 
 I didn't mind organizing files because there are just a few files. If a project is supposed to get bigger, I am sure we need to separate files using directories like controllers, services, entities/models, components, utils, etc.
 
-## Work hours
+# Work hours
 
 It seems that I spent about eight hours except an hour of documentation and several hours studying Nx and Nest before.
 
